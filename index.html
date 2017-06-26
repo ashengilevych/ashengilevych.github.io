@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Rubik Cube</title>
+  <style>	
+	html, body {
+		height: 100%;
+	}
+	body { 
+		margin: 0; 
+		overflow: hidden; 
+		background-color: #303030;
+		color: #eee;
+	}
+	#scene { 
+		height: 100%;
+	}
+	.info{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		color: #fff;
+		font-size: 18px;
+		font-family: arial, sans-serif;
+	}
+  </style>
+</head>
+
+<body>
+
+  <div class="info">
+  	<ul>
+  		<li>
+  			Drag on the cube - transform cube
+  		</li>
+  		<li>
+  			Drag on background - rotate cube
+  		</li>
+  	</ul>
+  </div>
+  <div id="scene"></div>
+	
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <!-- Three.js libraries, core and cube script -->
+  <script src="dist/scripts.min.js"></script>
+  <!-- Init cube -->
+  <script>
+
+    $(function() {
+		function init() {
+			var element = $("#scene").empty();
+			var rubik = new Rubik(element);     
+		};
+		$(window).on('resize', function(){
+		  	init();
+		});
+
+		init();      
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>
